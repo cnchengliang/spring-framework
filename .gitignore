@@ -38,6 +38,7 @@ spring-*/src/main/java/META-INF/MANIFEST.MF
 *.iws
 .idea
 out
+build
 test-output
 atlassian-ide-plugin.xml
 .gradletasknamecache
