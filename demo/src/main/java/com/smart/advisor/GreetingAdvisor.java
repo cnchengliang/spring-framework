@@ -5,6 +5,7 @@ import java.lang.reflect.Method;
 import org.springframework.aop.ClassFilter;
 import org.springframework.aop.support.StaticMethodMatcherPointcutAdvisor;
 
+@SuppressWarnings("serial")
 public class GreetingAdvisor extends StaticMethodMatcherPointcutAdvisor {
 
     public boolean matches(Method method, Class clazz) {
