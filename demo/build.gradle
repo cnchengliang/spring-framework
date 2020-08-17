@@ -20,6 +20,9 @@ dependencies {
     // Aspect注解使用
     compile(project(":spring-aspects"))
 
+    // Spring groovy表达式
+    compile group: 'org.codehaus.groovy', name: 'groovy-all', version: '2.3.6'
+
 
     compile "org.slf4j:slf4j-api:1.7.5"
     compile "org.slf4j:slf4j-log4j12:1.7.5"
