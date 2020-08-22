@@ -11,15 +11,15 @@
     <context:component-scan base-package="com.smart.connleak"/>
     <context:property-placeholder location="classpath:jdbc.properties"/>
     <bean id="originDataSource" class="org.apache.commons.dbcp.BasicDataSource"
-		destroy-method="close" 
-		p:driverClassName="${jdbc.driverClassName}"
-		p:url="${jdbc.url}" 
-		p:username="${jdbc.username}"
-		p:password="${jdbc.password}"/>
-	
-	<bean id="dataSource"
-		class="org.springframework.jdbc.datasource.TransactionAwareDataSourceProxy"
-		p:targetDataSource-ref="originDataSource" />
+        destroy-method="close"
+        p:driverClassName="${jdbc.driverClassName}"
+        p:url="${jdbc.url}"
+        p:username="${jdbc.username}"
+        p:password="${jdbc.password}"/>
+
+    <bean id="dataSource"
+        class="org.springframework.jdbc.datasource.TransactionAwareDataSourceProxy"
+        p:targetDataSource-ref="originDataSource" />
 
     <bean id="jdbcTemplate"
           class="org.springframework.jdbc.core.JdbcTemplate"

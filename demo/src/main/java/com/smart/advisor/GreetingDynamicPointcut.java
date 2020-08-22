@@ -24,7 +24,7 @@ public class GreetingDynamicPointcut extends DynamicMethodMatcherPointcut {
 //        System.out.println("调用matches(method,clazz)对"+clazz.getName()+"."+method.getName()+"做静态检查.");
 //        return "greetTo".equals(method.getName());
 //    }
-    public boolean matches(Method method, Class clazz, Object[] args) {
+    public boolean matches(Method method, Class<?> clazz, Object... args) {
         System.out.println("调用matches(method,clazz)对"+clazz.getName()+"."+method.getName()+"做动态检查.");
         String clientName = (String) args[0];
         return specialClientList.contains(clientName);

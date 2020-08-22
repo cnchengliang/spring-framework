@@ -15,14 +15,15 @@ public class BaseDao<T> {
     public void setHibernateTemplate(HibernateTemplate hibernateTemplate) {
         this.hibernateTemplate = hibernateTemplate;
     }
-   private Class entityClass;
+   private Class<?> entityClass;
    
    public BaseDao(){
         Type genType = getClass().getGenericSuperclass();
         Type[] params = ((ParameterizedType) genType).getActualTypeArguments();
         entityClass = (Class) params[0];
     }
-   
+
+    @SuppressWarnings("unchecked")
     public T get(Serializable id){
         return (T)hibernateTemplate.get(entityClass, id);
     }

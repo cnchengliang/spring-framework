@@ -33,6 +33,7 @@ public class ForumHibernateDao {
                 "select count(f.forumId) from Forum f").list().iterator();
         return (Long) obj;
     }
+    @SuppressWarnings({"deprecation", "unchecked"})
     public List<Forum> findForumByName(String forumName) {
         List list = sessionFactory
               .getCurrentSession()

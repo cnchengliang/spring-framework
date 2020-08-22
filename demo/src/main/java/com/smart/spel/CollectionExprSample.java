@@ -10,6 +10,7 @@ import org.springframework.expression.spel.support.StandardEvaluationContext;
 import java.util.*;
 
 public class CollectionExprSample {
+    @SuppressWarnings({"deprecation", "unchecked"})
     public static void main(String[] args) {
         User user = new User();
         user.setUserName("tom");

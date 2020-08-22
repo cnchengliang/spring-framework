@@ -11,7 +11,8 @@ import org.apache.commons.lang.builder.ToStringBuilder;
 
 @Entity
 @Table(name="T_FORUM")
-public class Forum implements Serializable{
+public class Forum implements Serializable {
+    private static final long serialVersionUID = 1L;
     @Id
     @Column(name = "FORUM_ID")
     private int forumId;

@@ -25,6 +25,7 @@ public class ForumHibernateDao extends BaseDao {
         return getHibernateTemplate().get(Forum.class, forumId);
     }
 
+    @SuppressWarnings({"deprecation", "unchecked"})
     public long getForumNum() {
         Object obj = getHibernateTemplate().iterate(
                 "select count(f.forumId) from Forum f").next();
@@ -46,6 +47,7 @@ public class ForumHibernateDao extends BaseDao {
         return forumNum;
     }
 
+    @SuppressWarnings({"deprecation", "unchecked"})
     public List<Forum> findForumByName(String forumName) {
         return (List<Forum>) getHibernateTemplate().find(
                 "from Forum f where f.forumName like ?", forumName + "%");

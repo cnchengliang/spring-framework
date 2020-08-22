@@ -6,7 +6,8 @@ import java.util.Date;
 import java.util.List;
 import java.util.Map;
 
-public class User implements Serializable{
+public class User implements Serializable {
+    private static final long serialVersionUID = 1L;
     private int userId;
     private String userName;
     private String password;
@@ -14,7 +15,7 @@ public class User implements Serializable{
     private String lastIp;
     private Date lastVisit;
     private PlaceOfBirth placeOfBirth;
-    private List interestsList;
+    private List<String> interestsList;
     private String interestsArray[];
     private Map interestsMap;
 
@@ -101,6 +102,7 @@ public class User implements Serializable{
         return "123456".equals(password);
     }
 
+    @SuppressWarnings({"deprecation", "unchecked"})
     public  void addInterests(String... interests){
         if(interestsList==null){
                interestsList = new ArrayList();
@@ -115,6 +117,7 @@ public class User implements Serializable{
         return interestsList;
     }
 
+    @SuppressWarnings({"deprecation", "unchecked"})
     public void setInterestsList(List interestsList) {
         this.interestsList = interestsList;
     }

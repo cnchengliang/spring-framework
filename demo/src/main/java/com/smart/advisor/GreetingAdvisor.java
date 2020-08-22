@@ -8,12 +8,12 @@ import org.springframework.aop.support.StaticMethodMatcherPointcutAdvisor;
 @SuppressWarnings("serial")
 public class GreetingAdvisor extends StaticMethodMatcherPointcutAdvisor {
 
-    public boolean matches(Method method, Class clazz) {
+    public boolean matches(Method method, Class<?> clazz) {
         return "greetTo".equals(method.getName());
     }
     public ClassFilter getClassFilter(){
         return new ClassFilter(){
-            public boolean matches(Class clazz){
+            public boolean matches(Class<?> clazz){
                 return Waiter.class.isAssignableFrom(clazz);
             }
         };

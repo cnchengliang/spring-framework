@@ -1,6 +1,6 @@
 package com.smart.service;
 
-import com.smart.domain.Forum;
+import com.smart.entity.Forum;
 import com.smart.service.hibernate.BbtForumSerive;
 import org.junit.Test;
 import org.springframework.beans.factory.annotation.Autowired;

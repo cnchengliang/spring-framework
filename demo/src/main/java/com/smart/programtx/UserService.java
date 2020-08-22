@@ -33,6 +33,7 @@ public class UserService {
         return dataSourceTransactionManager;
     }
 
+    @SuppressWarnings({"deprecation", "unchecked"})
     public void addScore() throws Throwable {
         final JdbcTemplate jdbcTemplate = new JdbcTemplate();
         jdbcTemplate.setDataSource(this.dataSource);

@@ -11,6 +11,7 @@ import java.lang.String;
 
 
 public class ObjectExprSample {
+    @SuppressWarnings("unchecked")
     public static void main(String[] args) {
         User  user = new User("tom");
         ExpressionParser parser = new SpelExpressionParser();
@@ -28,7 +29,7 @@ public class ObjectExprSample {
                (List<Boolean>)parser.parseExpression("#credits.![#this>100]").getValue(context);
 
 
-        Map<String,Integer> creditsMap = new HashMap();
+        Map<String,Integer> creditsMap = new HashMap<String, Integer>();
         creditsMap.put("aTom",95);
         creditsMap.put("bJony",110);
         creditsMap.put("cMorin",85);

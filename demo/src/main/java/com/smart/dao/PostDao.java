@@ -91,8 +91,9 @@ public class PostDao {
                     }
                 });
 
-    };
+    }
 
+    @SuppressWarnings({"deprecation", "unchecked"})
     public void getAttach(final int postId, final OutputStream os) {
         String sql = "SELECT post_attach FROM t_post WHERE post_id=? ";
         jdbcTemplate.query(sql, new Object[] {postId},

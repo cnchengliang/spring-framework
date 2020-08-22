@@ -50,6 +50,7 @@ public class LiteralExprSample {
         System.out.println("null = "+ nullValue);
     }
 
+    @SuppressWarnings({"deprecation", "unchecked"})
     public static  void object(){
         GregorianCalendar c = new GregorianCalendar();
         c.set(1856, 7, 9);

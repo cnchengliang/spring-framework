@@ -17,6 +17,7 @@ import org.apache.commons.lang.builder.ToStringBuilder;
 @Entity
 @Table(name="T_POST")
 public class Post implements Serializable {
+    private static final long serialVersionUID = 1L;
     @Id
     @Column(name = "POST_ID")
     private int postId;

@@ -18,13 +18,14 @@ public class SystemBootManager implements ApplicationListener<ContextRefreshedEv
 
     private Logger logger = LoggerFactory.getLogger(this.getClass());
 
+    @SuppressWarnings("unchecked")
     private List<SystemBootAddon> systemBootAddons = Collections.EMPTY_LIST;
 
     private boolean hasRunOnce = false;
 
     @Autowired(required = false)
     public void setSystemBootAddons(List<SystemBootAddon> systemBootAddons) {
-        Assert.notEmpty(systemBootAddons);
+        Assert.notEmpty(systemBootAddons, "not empty systemBootAddons");
         OrderComparator.sort(systemBootAddons);
         this.systemBootAddons =systemBootAddons;
     }

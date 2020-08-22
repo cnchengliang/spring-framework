@@ -153,6 +153,7 @@ public class ForumDao extends BaseDao<Forum> {
         return jdbcTemplate.queryForObject(sql, Integer.class);
     }
 
+    @SuppressWarnings("deprecation")
     public long getForumNum2() {
         Object obj = getHibernateTemplate().iterate(
                 "select count(f.forumId) from Forum f").next();
