@@ -14,7 +14,7 @@ import java.sql.*;
 import java.util.List;
 
 @Repository
-public class ForumDao {
+public class ForumDao extends BaseDao<Forum> {
 
     private JdbcTemplate jdbcTemplate;
 
@@ -151,6 +151,12 @@ public class ForumDao {
     public int getForumNum() {
         String sql = "SELECT forum_id FROM t_forum ";
         return jdbcTemplate.queryForObject(sql, Integer.class);
+    }
+
+    public long getForumNum2() {
+        Object obj = getHibernateTemplate().iterate(
+                "select count(f.forumId) from Forum f").next();
+        return (Long) obj;
     }
 
     public void updateForum(final Forum forum) {
