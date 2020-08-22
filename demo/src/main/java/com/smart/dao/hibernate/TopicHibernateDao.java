@@ -2,7 +2,7 @@ package com.smart.dao.hibernate;
 
 import org.springframework.stereotype.Repository;
 
-import com.smart.domain.Topic;
+import com.smart.entity.Topic;
 
 @Repository
 public class TopicHibernateDao extends BaseDao {
