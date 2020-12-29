@@ -16,6 +16,8 @@ spring-test/test-output/
 argfile*
 pom.xml
 activemq-data/
+.DS_Store
+._*
 
 classes/
 /build
