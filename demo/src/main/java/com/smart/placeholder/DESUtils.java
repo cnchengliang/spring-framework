@@ -6,8 +6,9 @@ import java.security.SecureRandom;
 import javax.crypto.Cipher;
 import javax.crypto.KeyGenerator;
 
-import sun.misc.BASE64Decoder;
-import sun.misc.BASE64Encoder;
+import java.util.Base64;
+import java.util.Base64.Decoder;
+import java.util.Base64.Encoder;
 
 public class DESUtils {
     private static Key key;
@@ -30,13 +31,13 @@ public class DESUtils {
      * @return
      */
     public static String getEncryptString(String str) {
-        BASE64Encoder base64en = new BASE64Encoder();
+        Encoder base64en = Base64.getEncoder();
         try {
             byte[] strBytes = str.getBytes("UTF8");
             Cipher cipher = Cipher.getInstance("DES");
             cipher.init(Cipher.ENCRYPT_MODE, key);
             byte[] encryptStrBytes = cipher.doFinal(strBytes);
-            return base64en.encode(encryptStrBytes);
+            return new String(base64en.encode(encryptStrBytes));
         } catch (Exception e) {
             throw new RuntimeException(e);
         }
@@ -49,9 +50,9 @@ public class DESUtils {
      * @return
      */
     public static String getDecryptString(String str) {
-        BASE64Decoder base64De = new BASE64Decoder();
+        Decoder base64De = Base64.getDecoder();
         try {
-            byte[] strBytes = base64De.decodeBuffer(str);
+            byte[] strBytes = base64De.decode(str);
             Cipher cipher = Cipher.getInstance("DES");
             cipher.init(Cipher.DECRYPT_MODE, key);
             byte[] decryptStrBytes = cipher.doFinal(strBytes);

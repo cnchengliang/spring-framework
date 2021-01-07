@@ -11,7 +11,7 @@ import org.springframework.http.converter.json.MappingJackson2HttpMessageConvert
 import org.springframework.http.converter.xml.MarshallingHttpMessageConverter;
 import org.springframework.oxm.xstream.XStreamMarshaller;
 import org.springframework.test.context.ContextConfiguration;
-import org.springframework.test.context.testng.AbstractTransactionalTestNGSpringContextTests;
+import org.springframework.test.context.junit4.AbstractTransactionalJUnit4SpringContextTests;
 import org.springframework.util.FileCopyUtils;
 import org.springframework.util.LinkedMultiValueMap;
 import org.springframework.util.MultiValueMap;
@@ -21,7 +21,7 @@ import java.io.IOException;
 import java.util.Collections;
 
 @ContextConfiguration(locations = "classpath:applicationContext.xml")
-public class UserControllerTest  extends AbstractTransactionalTestNGSpringContextTests {
+public class UserControllerTest  extends AbstractTransactionalJUnit4SpringContextTests {
     @Test
     public void testhandle41() {
         RestTemplate restTemplate = new RestTemplate();

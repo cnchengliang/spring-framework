@@ -15,6 +15,7 @@ import java.util.Map;
 public class UserListExcelView extends AbstractXlsView {
 
     @Override
+    @SuppressWarnings("unchecked")
     protected void buildExcelDocument(Map<String, Object> model,
                                       Workbook workbook , HttpServletRequest request,
             HttpServletResponse response) throws Exception {

@@ -8,6 +8,7 @@ import org.quartz.StatefulJob;
 import org.springframework.context.ApplicationContext;
 
 public class MyJob implements StatefulJob {
+    @SuppressWarnings("unchecked")
     public void execute(JobExecutionContext jctx) throws JobExecutionException {
 //Map dataMap = jctx.getJobDetail().getJobDataMap();
         Map dataMap = jctx.getTrigger().getJobDataMap();

@@ -23,6 +23,7 @@ import com.lowagie.text.pdf.PdfWriter;
 public class UserListPdfView extends AbstractPdfView {
 
     @Override
+    @SuppressWarnings("unchecked")
     protected void buildPdfDocument(Map<String, Object> model,
             Document document, PdfWriter writer, HttpServletRequest request,
             HttpServletResponse response) throws Exception {

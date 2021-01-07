@@ -1,8 +1,8 @@
 package com.smart.placeholder;
 
-import org.springframework.beans.factory.config.PropertyPlaceholderConfigurer;
+import org.springframework.context.support.PropertySourcesPlaceholderConfigurer;
 
-public class EncryptPropertyPlaceholderConfigurer extends PropertyPlaceholderConfigurer {	
+public class EncryptPropertyPlaceholderConfigurer extends PropertySourcesPlaceholderConfigurer {
     private String[] encryptPropNames ={"userName","password"};
 
     @Override

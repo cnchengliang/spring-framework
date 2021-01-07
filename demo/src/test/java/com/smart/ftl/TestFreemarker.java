@@ -5,7 +5,7 @@ import freemarker.template.Template;
 import org.junit.Test;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.test.context.ContextConfiguration;
-import org.springframework.test.context.testng.AbstractTransactionalTestNGSpringContextTests;
+import org.springframework.test.context.junit4.AbstractTransactionalJUnit4SpringContextTests;
 import org.springframework.ui.freemarker.FreeMarkerTemplateUtils;
 import org.springframework.web.servlet.view.freemarker.FreeMarkerConfigurer;
 
@@ -15,7 +15,7 @@ import java.util.List;
 import java.util.Map;
 
 @ContextConfiguration(locations = "classpath:applicationContext.xml")
-public class TestFreemarker  extends AbstractTransactionalTestNGSpringContextTests {
+public class TestFreemarker extends AbstractTransactionalJUnit4SpringContextTests {
 
     @Autowired
     private FreeMarkerConfigurer freeMarkerConfigurer;
